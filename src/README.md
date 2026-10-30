@@ -1,0 +1,1 @@
+# Module map\n\nThư mục này ánh xạ 8 module trong workbook sang mã nguồn backend, API và test tương ứng. Mã nguồn thực thi được tổ chức theo lớp trong `backend/`; mỗi thư mục module chứa phạm vi và liên kết đối chiếu, không chứa bản sao code.\n
