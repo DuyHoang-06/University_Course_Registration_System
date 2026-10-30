@@ -1,0 +1,4 @@
+# Datasets
+- `requirements.csv`, `non_functional_requirements.csv`, `stakeholders.csv`, `use_cases.csv`, `change_requests.csv`, `test_case_analysis.csv`, `modules.csv`, `process_activities.csv`, `elicitation_sessions.csv`, `tools.csv`: filtered exports from the supplied project workbook.
+- `sample_courses.csv`: illustrative local demo seed catalogue; not an official university catalogue.
+\n\n## Workbook-derived datasets\n\nCSV files in this directory are structured exports of non-empty rows from the supplied UniCourse workbook. `traceability.csv` maps requirements to use cases and test cases. The original workbook is retained unchanged in `workbooks/`.\n

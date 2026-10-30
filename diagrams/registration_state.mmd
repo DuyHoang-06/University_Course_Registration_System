@@ -1,0 +1,8 @@
+stateDiagram-v2
+  [*] --> NotRegistered
+  NotRegistered --> Confirmed: valid registration
+  NotRegistered --> NotRegistered: validation rejected
+  Confirmed --> Cancelled: student cancels own registration
+  Confirmed --> SectionCancelled: administrator cancels section
+  Cancelled --> [*]
+  SectionCancelled --> [*]

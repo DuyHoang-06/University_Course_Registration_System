@@ -1,0 +1,9 @@
+﻿id,phase,activity,inputs,outputs,roles,duration_days
+PA-001,Requirements,Requirements Elicitation,"Stakeholder interviews, existing project notes, change requests",Elicitation findings and stakeholder needs,Business Analyst; Stakeholders,3.0
+PA-002,Requirements,Requirements Analysis,Elicitation findings and domain rules,"Prioritized, classified and de-duplicated requirements",Business Analyst; Development Team,3.0
+PA-003,Requirements,Requirements Validation & Baseline,"Requirements, NFRs, acceptance criteria",Approved requirements baseline and traceability targets,Business Analyst; Product Owner/Stakeholders,2.0
+PA-004,Design,System & Data Design,Approved requirements,"Module architecture, data model, storage and interface design",Software Engineer; Developer; DBA/IT Ops,4.0
+PA-005,Implementation,Backend & UI Development,Design baseline,"Implemented modules, APIs, UI and persistence logic",Developer,8.0
+PA-006,Verification,Functional & Security Testing,"Requirements, use cases, test cases, build","Executed results, defects and coverage evidence",QA/Tester; Developer,5.0
+PA-007,Change Management,Change Impact Analysis,"Change request, baseline and traceability",Approved/rejected change with cost/schedule/requirement impact,Business Analyst; Stakeholders; Developer,2.0
+PA-008,Release,Deployment & Operational Readiness,"Verified build, configuration and release checklist",Deployable release and monitoring/rollback plan,Developer; IT Operations,2.0

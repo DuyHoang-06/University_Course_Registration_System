@@ -1,0 +1,11 @@
+flowchart LR
+  Student[Student Browser] --> UI[HTML CSS JavaScript UI]
+  Lecturer[Lecturer Browser] --> UI
+  Admin[Administrator Browser] --> UI
+  UI --> API[FastAPI Routers]
+  API --> Auth[Authentication and RBAC]
+  API --> Services[Application Services]
+  Services --> ORM[SQLAlchemy]
+  ORM --> DB[(Relational Database)]
+  Services --> Notify[Notification Records]
+  Notify --> DB

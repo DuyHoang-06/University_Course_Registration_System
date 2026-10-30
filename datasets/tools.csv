@@ -1,0 +1,8 @@
+﻿id,name,category,purpose,strengths,limitations
+T-001,Visual Studio Code,IDE,"Develop, inspect, debug and maintain the application.",Lightweight; extensible; strong Python/web support.,Extensions/configuration may be required for specialized tooling.
+T-002,GitHub,Version Control,"Store source code, collaborate and review changes.","Version history, pull requests and issue tracking.",Remote operations require network access.
+T-003,FastAPI,Backend Framework,Expose backend web/API endpoints and application services.,"Fast, typed Python API framework with automatic API documentation.","Additional libraries are needed for authentication, persistence and domain features."
+T-004,SQLAlchemy,ORM / Data Access,Map domain entities to relational tables and execute database queries/transactions.,Reusable ORM and transaction support; testable with SQLite.,Database-specific behavior depends on configured backend.
+T-005,SQLite,Test Database,Provide an isolated relational database for automated tests.,"Fast, zero-configuration and suitable for unit/integration test isolation.",Not assumed to be the production database engine.
+T-006,Pytest,Testing Framework,Execute automated unit/integration tests for business rules.,"Fixtures, assertions and readable test structure.",End-to-end browser testing requires additional tooling.
+T-007,HTML/CSS/Frontend UI,Presentation Layer,"Provide browser-based pages/forms for authentication, catalogue, registration and administration.",Direct user interaction and broad browser accessibility.,UI behavior depends on the selected frontend implementation.

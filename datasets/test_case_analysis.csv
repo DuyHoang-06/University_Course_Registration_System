@@ -1,0 +1,36 @@
+﻿id,test_case_id,source_type,source_id,use_case_id,flow,coverage_type,notes
+TCA-001,TC-001,Requirement,REQ-001,UC-01,Happy Path,Functional,Covers happy path flow for Login with Valid Credentials; module: Authentication & Account Management.
+TCA-002,TC-002,Requirement,REQ-001,UC-01,Negative,Negative,Covers negative flow for Login with Invalid Credentials; module: Authentication & Account Management.
+TCA-003,TC-003,Requirement,REQ-002,UC-02,Happy Path,Functional,Covers happy path flow for View Available Courses; module: Course Catalogue & Class Information.
+TCA-004,TC-004,Requirement,REQ-003,UC-02,Happy Path,Functional,Covers happy path flow for View Class Information; module: Course Catalogue & Class Information.
+TCA-005,TC-005,Requirement,REQ-004,UC-03,Happy Path,Functional,Covers happy path flow for Register for Available Class; module: Registration & Validation.
+TCA-006,TC-006,Requirement,REQ-005,UC-03 / UC-10,Negative,Negative,Covers negative flow for Reject Registration with Schedule Conflict; module: Registration & Validation.
+TCA-007,TC-007,Requirement,REQ-006,UC-03 / UC-10,Boundary/Negative,Negative,Covers boundary/negative flow for Reject Registration When Class Is Full; module: Registration & Validation.
+TCA-008,TC-008,Requirement,REQ-007,UC-04,Happy Path,Functional,Covers happy path flow for View Registered Classes; module: Student Self-Service.
+TCA-009,TC-009,Requirement,REQ-008,UC-04,Happy Path,Functional,Covers happy path flow for Cancel Course Registration; module: Student Self-Service.
+TCA-010,TC-010,Requirement,REQ-009,UC-05,Happy Path,Functional,Covers happy path flow for Admin Creates New Class; module: Administration & Class Management.
+TCA-011,TC-011,Requirement,REQ-010,UC-05,Happy Path,Functional,Covers happy path flow for Admin Edits Class Information; module: Administration & Class Management.
+TCA-012,TC-012,Requirement,REQ-011,UC-05,Happy Path,Functional,Covers happy path flow for Admin Cancels Class; module: Administration & Class Management.
+TCA-013,TC-013,Requirement,REQ-012,UC-06,Integration,Functional,Covers integration flow for Notify Students After Class Cancellation; module: Notification Management.
+TCA-014,TC-014,Requirement,REQ-013,UC-11 / UC-12,Security,Security,Covers security flow for Verify User Role Permissions; module: Security & Data Integrity.
+TCA-015,TC-015,Requirement,REQ-014,UC-06,Happy Path,Functional,Covers happy path flow for View Notifications; module: Notification Management.
+TCA-016,TC-016,Requirement,REQ-015,UC-03,Data Integrity,Data Integrity,Covers data integrity flow for Persist Registration Data; module: Security & Data Integrity.
+TCA-017,TC-017,Requirement,REQ-016,UC-07,Happy Path,Functional,Covers happy path flow for Register New Student Account; module: Authentication & Account Management.
+TCA-018,TC-018,Requirement,REQ-016,UC-07,Negative,Negative,Covers negative flow for Reject Duplicate Email During Registration; module: Authentication & Account Management.
+TCA-019,TC-019,Requirement,REQ-016,UC-07,Negative,Negative,Covers negative flow for Reject Duplicate Student Code; module: Authentication & Account Management.
+TCA-020,TC-020,Requirement,REQ-017,UC-08,Happy/Security,Security,Covers happy/security flow for Logout Clears Active Session; module: Authentication & Account Management.
+TCA-021,TC-021,Requirement,REQ-018,UC-08,Negative/Security,Security,Covers negative/security flow for Protected Page Requires Authentication; module: Security & Data Integrity.
+TCA-022,TC-022,Requirement,REQ-019,UC-09,Happy Path,Functional,Covers happy path flow for View Student Dashboard Summary; module: Student Self-Service.
+TCA-023,TC-023,Requirement,REQ-020,UC-09,Happy Path,Functional,Covers happy path flow for View Own Profile; module: Student Self-Service.
+TCA-024,TC-024,Requirement,REQ-021,UC-10,Negative,Negative,Covers negative flow for Reject Duplicate Section Registration; module: Registration & Validation.
+TCA-025,TC-025,Requirement,REQ-022,UC-10,Negative,Negative,Covers negative flow for Reject Course Outside Student Program; module: Registration & Validation.
+TCA-026,TC-026,Requirement,REQ-023,UC-10,Negative,Negative,Covers negative flow for Reject Closed Class Registration; module: Registration & Validation.
+TCA-027,TC-027,Requirement,REQ-005,UC-10,Boundary,Boundary,Covers boundary flow for Adjacent Class Times Do Not Conflict; module: Registration & Validation.
+TCA-028,TC-028,Requirement,REQ-024,UC-03,Data Integrity,Data Integrity,Covers data integrity flow for Enrollment Count Increments Once; module: Registration & Validation.
+TCA-029,TC-029,Requirement,REQ-027,UC-13,Integration,Integration,Covers integration flow for Registration Creates Confirmation Notification; module: Notification Management.
+TCA-030,TC-030,Requirement,REQ-025,UC-11,Happy Path,Functional,Covers happy path flow for Lecturer Views Assigned Sections; module: Lecturer Workspace.
+TCA-031,TC-031,Requirement,REQ-025,UC-11,Security/Data Scope,Security,Covers security/data scope flow for Lecturer Does Not See Another Lecturer Sections; module: Lecturer Workspace.
+TCA-032,TC-032,Requirement,REQ-026,UC-12,Happy Path,Functional,Covers happy path flow for Admin Statistics Returns Correct Counts; module: Administration & Class Management.
+TCA-033,TC-033,Requirement,REQ-013;REQ-026,UC-12,Security,Security,Covers security flow for Student Is Denied Admin Statistics API; module: Security & Data Integrity.
+TCA-034,TC-034,Requirement,REQ-013,UC-12,Security / Known Gap,Security,Security known-gap coverage: verifies that the admin HTML route applies role authorization consistently with the protected API.
+TCA-035,TC-035,Requirement,REQ-004;REQ-005;REQ-006,UC-03,Error Handling / Known Bug,Negative,Error-handling known-gap coverage: verifies validation-error redirect encoding and successful handling without a server exception.

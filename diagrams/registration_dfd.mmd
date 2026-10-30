@@ -1,0 +1,10 @@
+flowchart TD
+  S[Student] -->|Registration request| P1[1. Validate identity and request]
+  P1 --> P2[2. Validate section status and capacity]
+  P2 --> P3[3. Check duplicate, program and timetable]
+  P3 -->|All checks pass| P4[4. Commit registration transaction]
+  P3 -->|Validation error| E[Return actionable error]
+  P4 <--> D1[(CourseSection)]
+  P4 <--> D2[(Registration)]
+  P4 --> D3[(Notification)]
+  P4 --> R[Registration confirmation]

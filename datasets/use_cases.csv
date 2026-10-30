@@ -1,0 +1,87 @@
+﻿id,module,title,primary_actor,goal,preconditions,main_flow,alternative_flows,postconditions,trigger,frequency,related_requirements,implementation_status
+UC-01,Authentication & Account Management,Login,Student / Lecturer / Administrator,Authenticate a registered user and establish an authorized session.,Account exists and is active; login page is accessible.,"1. Open login page.
+2. Enter email and password.
+3. Submit credentials.
+4. System validates identity.
+5. System creates authenticated session.
+6. System resolves role.
+7. Redirect to authorized landing page.","Invalid credentials → reject and show error.
+Inactive account → deny login.
+Missing fields → validation message.",Authenticated session exists and user can access permitted functions.,User submits login form.,High,"REQ-001, REQ-018",Implemented
+UC-02,Course Catalogue & Class Information,Browse Available Courses,Student,Find open course sections relevant to the student's program.,Student is authenticated; student has an academic program.,"1. Open course catalogue.
+2. Retrieve courses and sections.
+3. Filter eligible program.
+4. Filter open sections.
+5. Display results.
+6. Student selects a section for details.","No matching sections → empty state.
+Section becomes unavailable → refresh and show current status.",Student can see eligible open offerings.,Student opens course catalogue.,High,"REQ-002, REQ-003",Implemented
+UC-03,Registration & Validation,Register for a Class,Student,Create a valid registration for an available section.,Student authenticated; selected section exists.,"1. Submit registration.
+2. Validate section status.
+3. Validate capacity.
+4. Validate duplicate registration.
+5. Validate program eligibility.
+6. Validate schedule conflict.
+7. Create registration.
+8. Increment enrollment count.
+9. Create confirmation notification.
+10. Commit transaction.
+11. Redirect to registered classes.","Missing section → 404.
+Closed/full/duplicate/ineligible/conflict → reject and do not persist partial changes.",Confirmed registration exists; enrollment count and notification are consistent.,Student confirms registration.,Very High,"REQ-004, REQ-005, REQ-006, REQ-021, REQ-022, REQ-023, REQ-024, REQ-027",Implemented
+UC-04,Student Self-Service,View and Cancel Registered Classes,Student,Review own registrations and cancel an eligible registration.,Student authenticated; registrations exist or may be empty.,"1. Open My Courses.
+2. System loads own registrations.
+3. Display course/section/status.
+4. Student chooses cancellation.
+5. System validates ownership/state.
+6. Update registration state.
+7. Adjust enrollment count if applicable.
+8. Persist changes.","No registrations → empty state.
+Already cancelled → reject duplicate action.
+Unauthorized registration id → deny.",Own registration list is current and cancellation is consistent.,Student opens My Courses or selects cancel.,High,"REQ-007, REQ-008",Partially Implemented
+UC-05,Administration & Class Management,Manage Course Sections,Administrator,"Create, edit and cancel course sections.",Administrator authenticated and authorized.,"1. Open admin class management.
+2. Create or select a section.
+3. Enter/edit course, lecturer, schedule, room, capacity, fee and status.
+4. Validate fields.
+5. Save changes.
+6. For cancellation, update status and trigger affected-student notifications.","Invalid data → reject save.
+Unauthorized role → 403/deny.
+Cancellation with registrations → notify affected students.",Section data is persisted and its status controls registration availability.,Administrator selects class-management action.,High,"REQ-009, REQ-010, REQ-011, REQ-012",Partially Implemented
+UC-06,Notification Management,View Notifications,Student / Administrator,View notifications generated for the authenticated user.,User authenticated.,"1. Open notifications.
+2. Retrieve notifications by recipient.
+3. Sort/display recent notifications.
+4. Show notification status.","No notifications → empty state.
+Data retrieval failure → user-facing error.",Only the authenticated user's notifications are displayed.,User opens notification area.,Medium,"REQ-012, REQ-014, REQ-027",Implemented
+UC-07,Authentication & Account Management,Register Student Account,Student,Create a new student account.,Registration is enabled; required fields are available.,"1. Open registration page.
+2. Enter identity/account data.
+3. Validate required fields and unique identifiers.
+4. Create account.
+5. Confirm successful registration.","Duplicate email/student code → reject.
+Invalid/missing data → validation error.",New student account exists and can be used for login.,User submits registration form.,Medium,REQ-016,Implemented
+UC-08,Authentication & Account Management,Logout,Student / Lecturer / Administrator,End the active authenticated session.,User is authenticated.,"1. User selects Logout.
+2. System terminates session.
+3. Redirect to login.",Already expired session → redirect to login.,Protected resources require authentication again.,User selects Logout.,High,"REQ-017, REQ-018",Implemented
+UC-09,Student Self-Service,View Dashboard and Profile,Student,View student-specific summary and profile information.,Student authenticated.,"1. Open dashboard/profile.
+2. Load authenticated student's data.
+3. Display registration summary and profile.","Missing optional data → display safe defaults.
+Attempt to access another user's data → deny.",Student sees only own dashboard/profile.,Student opens dashboard/profile.,Medium,"REQ-019, REQ-020",Implemented
+UC-10,Registration & Validation,Validate Registration Rules,Student / Database System,Apply all registration business rules before commit.,Registration request exists.,"1. Resolve section.
+2. Check status.
+3. Check capacity.
+4. Check duplicate.
+5. Check program eligibility.
+6. Compare schedules.
+7. Return validation result to registration transaction.","Any rule failure → reject without partial commit.
+Adjacent time boundaries → accepted as non-overlap.",Validation decision is deterministic and transaction-safe.,Registration transaction invokes validation.,Very High,"REQ-005, REQ-006, REQ-021, REQ-022, REQ-023, REQ-024",Implemented
+UC-11,Lecturer Workspace,View Assigned Teaching Sections,Lecturer,View teaching sections assigned to the logged-in lecturer.,Lecturer authenticated.,"1. Open teaching schedule.
+2. Query sections assigned to current lecturer.
+3. Display schedule/class information.","No assigned sections → empty state.
+Request for another lecturer's data → deny/filter out.",Only assigned sections are visible.,Lecturer opens teaching workspace.,High,REQ-025,Implemented
+UC-12,Administration & Class Management,View Administration Statistics,Administrator,View current operational registration/class statistics.,Administrator authenticated and authorized.,"1. Open statistics.
+2. Query current counts.
+3. Aggregate results.
+4. Display statistics.","Unauthorized role → 403.
+No data → zero/empty counts.",Statistics reflect current persisted data and are visible only to administrators.,Administrator opens statistics.,Medium,"REQ-013, REQ-026",Implemented
+UC-13,Notification Management,Create Registration Confirmation,Notification Service,Create a confirmation notification after a successful registration.,Registration transaction has passed all validations and is committed/ready to commit.,"1. Receive successful registration event.
+2. Resolve student recipient.
+3. Build notification content.
+4. Persist notification.
+5. Make notification available to the student.",Notification persistence failure → transaction handling must prevent inconsistent success state.,Student receives an in-system confirmation notification linked to the registration event.,Successful registration triggers notification.,High,"REQ-024, REQ-027",Implemented

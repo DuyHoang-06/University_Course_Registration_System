@@ -1,0 +1,36 @@
+[1m============================= test session starts ==============================[0m
+platform linux -- Python 3.13.5, pytest-9.0.2, pluggy-1.6.0 -- /opt/pyvenv/bin/python
+cachedir: .pytest_cache
+metadata: {'Python': '3.13.5', 'Platform': 'Linux-6.18.57-x86_64-with-glibc2.41', 'Packages': {'pytest': '9.0.2', 'pluggy': '1.6.0'}, 'Plugins': {'anyio': '4.13.0', 'ddtrace': '4.4.0', 'Faker': '40.1.2', 'asyncio': '1.3.0', 'cov': '7.0.0', 'json-report': '1.5.0', 'metadata': '3.1.1'}, 'PLATFORM': 'linux/amd64', 'CI': 'true'}
+rootdir: /mnt/data/UniCourse_Source_Package
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.13.0, ddtrace-4.4.0, Faker-40.1.2, asyncio-1.3.0, cov-7.0.0, json-report-1.5.0, metadata-3.1.1
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+[1mcollecting ... [0mcollected 22 items
+
+tests/test_api.py::test_health_endpoint [32mPASSED[0m[32m                           [  4%][0m
+tests/test_api.py::test_student_login_and_role_protected_endpoint [32mPASSED[0m[32m [  9%][0m
+tests/test_api.py::test_anonymous_cannot_access_student_endpoint [32mPASSED[0m[32m  [ 13%][0m
+tests/test_api.py::test_student_registrations_endpoint_and_lecturer_scope [32mPASSED[0m[32m [ 18%][0m
+tests/test_module_admin.py::test_admin_can_update_section_and_capacity_cannot_underflow [32mPASSED[0m[32m [ 22%][0m
+tests/test_module_admin.py::test_non_admin_cannot_update_section [32mPASSED[0m[32m  [ 27%][0m
+tests/test_module_admin.py::test_admin_cannot_reduce_capacity_below_enrollment [32mPASSED[0m[32m [ 31%][0m
+tests/test_module_notifications.py::test_notifications_endpoint_is_scoped_to_authenticated_user [32mPASSED[0m[32m [ 36%][0m
+tests/test_module_student.py::test_student_dashboard_contains_only_own_registration_data [32mPASSED[0m[32m [ 40%][0m
+tests/test_registration_service.py::test_overlap_boundary_rule [32mPASSED[0m[32m    [ 45%][0m
+tests/test_registration_service.py::test_success_updates_registration_count_and_notification [32mPASSED[0m[32m [ 50%][0m
+tests/test_registration_service.py::test_duplicate_registration_rejected [32mPASSED[0m[32m [ 54%][0m
+tests/test_registration_service.py::test_full_section_rejected_without_partial_write [32mPASSED[0m[32m [ 59%][0m
+tests/test_registration_service.py::test_closed_section_rejected [32mPASSED[0m[32m  [ 63%][0m
+tests/test_registration_service.py::test_program_eligibility_rejected [32mPASSED[0m[32m [ 68%][0m
+tests/test_registration_service.py::test_schedule_overlap_rejected [32mPASSED[0m[32m [ 72%][0m
+tests/test_registration_service.py::test_adjacent_schedule_allowed [32mPASSED[0m[32m [ 77%][0m
+tests/test_registration_service.py::test_registration_persists_after_query [32mPASSED[0m[32m [ 81%][0m
+tests/test_registration_service.py::test_student_can_cancel_own_registration_and_release_seat [32mPASSED[0m[32m [ 86%][0m
+tests/test_registration_service.py::test_student_cannot_cancel_another_students_registration [32mPASSED[0m[32m [ 90%][0m
+tests/test_security.py::test_password_hash_is_not_plain_text [32mPASSED[0m[32m      [ 95%][0m
+tests/test_security.py::test_role_values_are_explicit [32mPASSED[0m[32m             [100%][0m
+
+- generated xml file: /mnt/data/UniCourse_Source_Package/output/test_logs/junit.xml -
+[32m============================== [32m[1m22 passed[0m[32m in 3.33s[0m[32m ==============================[0m

@@ -1,0 +1,6 @@
+﻿id,name,role,organization,influence,interest,contact,notes
+STK-01,Dr. Quang Huy,Faculty Manager,Faculty of IT,High,High,huy@fit.university.edu.vn,Owns academic oversight; approves course structure and monitors teaching quality.
+STK-02,Ms. Hoa,Administrator,Academic Affairs Office,High,High,hoa@ad.university.edu.vn,"Maintains courses/classes, registration windows, users/roles and operational data."
+STK-03,Mr. Nam,Lecturer,Faculty of IT,Medium,Medium,nam@lt.university.edu.vn,Views assigned teaching sections and schedules; does not administer student registrations.
+STK-04,Student Representatives,Student,University Student Body,Medium,High,student-representatives@university.edu.vn,"Represents student needs for search, registration, conflict prevention, cancellation and notifications."
+STK-05,IT Operations Team,System Operator,University IT Department,High,Medium,it-ops@university.edu.vn,"Maintains deployment, availability, security, database and operational monitoring."
